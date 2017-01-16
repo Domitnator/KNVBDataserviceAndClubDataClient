@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53129A66-0A97-4B5F-AFD9-BF753C121B59}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KNVBDataservice.Client</RootNamespace>
+    <AssemblyName>KNVBDataserviceAndClubDataClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="clubdata.html" />
+    <Content Include="V3\cood-club-competities.debug.html" />
+    <Content Include="V3\cood-club-programma-gegroepeerd.debug.html" />
+    <Content Include="V3\cood-club-programma.clubdata.debug.html" />
+    <Content Include="V3\cood-club-programma.html" />
+    <Content Include="V3\cood-club-teams.html" />
+    <Content Include="V3\cood-club-competities.html" />
+    <Content Include="V3\cood-club-uitslagen.debug.html" />
+    <Content Include="V3\cood-club-uitslagen-gefilterd.html" />
+    <Content Include="V3\cood-competitie-programma-uitslagen-stand.debug.html" />
+    <Content Include="V3\cood-competitie-stand.debug.html" />
+    <Content Include="V3\cood-competitie-stand-uitgebreid.html" />
+    <Content Include="V3\cood-competitie-stand.html" />
+    <Content Include="V3\cood-competitie-programma.html" />
+    <Content Include="V3\cood-competitie-programma-uitslagen-stand.html" />
+    <Content Include="V3\cood-competitie-uitslagen.debug.html" />
+    <Content Include="V3\cood-competitie-uitslagen.html" />
+    <Content Include="V3\cood-club-programma-gegroepeerd.html" />
+    <Content Include="V3\cood-club-uitslagen-gegroupeerd.html" />
+    <Content Include="V3\cood-club-uitslagen.html" />
+    <Content Include="V3\examples\cood-competitie-stand-external-template.html" />
+    <Content Include="V3\examples\templates\cood-competitie-stand.tmpl.html" />
+    <Content Include="V3\ids.html" />
+    <Content Include="V3\cood-club-programma.debug.html" />
+    <Content Include="V3\images\N.png" />
+    <Content Include="V3\images\B.png" />
+    <Content Include="V3\images\R.png" />
+    <Content Include="V3\images\V.png" />
+    <Content Include="V3\installatie.html" />
+    <Content Include="V3\scripts\app\common.js" />
+    <Content Include="V3\scripts\app\componentLoaderSportlink.js" />
+    <Content Include="V3\scripts\app\componentLoader.js" />
+    <Content Include="V3\scripts\app\components\cood-sportlink-club-programma.js" />
+    <Content Include="V3\scripts\app\components\cood-club-teams.js" />
+    <Content Include="V3\scripts\app\components\cood-club-competities.js" />
+    <Content Include="V3\scripts\app\components\cood-competitie-programma-uitslagen-stand.js" />
+    <Content Include="V3\scripts\app\components\cood-competitie-stand-uitgebreid.js" />
+    <Content Include="V3\scripts\app\components\cood-competitie-stand.js" />
+    <Content Include="V3\scripts\app\components\cood-competitie-uitslagen.js" />
+    <Content Include="V3\scripts\app\components\cood-competitie-programma.js" />
+    <Content Include="V3\scripts\app\components\cood-club-uitslagen-gegroepeerd.js" />
+    <Content Include="V3\scripts\app\components\cood-club-uitslagen.js" />
+    <Content Include="V3\scripts\app\components\cood-club-programma-gegroepeerd.js" />
+    <Content Include="V3\scripts\app\models\matchSportlink.js" />
+    <Content Include="V3\scripts\app\proxySportlink.js" />
+    <Content Include="V3\scripts\app\resultFilter.js" />
+    <Content Include="V3\scripts\app\teamFilterSportlink.js" />
+    <Content Include="V3\scripts\app\teamFilter.js" />
+    <Content Include="V3\scripts\app\localStorage.js" />
+    <Content Include="V3\scripts\app\models\result.js" />
+    <Content Include="V3\scripts\app\models\matchGrouped.js" />
+    <Content Include="V3\scripts\app\models\ranking.js" />
+    <Content Include="V3\scripts\app\templates\cood-sportlink-club-programma.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-competitie-programma-uitslagen-stand.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-competitie-stand-uitgebreid.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-competitie-stand.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-competitie-uitslagen.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-competitie-programma.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-club-teams.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-club-programma-gegroepeerd.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-club-competities.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-club-uitslagen-gegroepeerd.tmpl.html" />
+    <Content Include="V3\scripts\app\templates\cood-club-uitslagen.tmpl.html" />
+    <Content Include="V3\scripts\lib\knockout.mapping.js" />
+    <None Include="V3\output.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="V3\scripts\app.js" />
+    <Content Include="V3\scripts\app\clientApp.js" />
+    <Content Include="V3\scripts\app\components\cood-club-programma.js" />
+    <Content Include="V3\scripts\app\main.js" />
+    <Content Include="V3\scripts\app\models\match.js" />
+    <Content Include="V3\scripts\app\proxy.js" />
+    <Content Include="V3\scripts\app\templates\cood-club-programma.tmpl.html" />
+    <Content Include="V3\scripts\config.js" />
+    <Content Include="V3\scripts\lib\knockout-3.4.0.js" />
+    <Content Include="V3\scripts\lib\knockout-amd-helpers.min.js" />
+    <Content Include="V3\scripts\lib\moment.js" />
+    <Content Include="V3\scripts\lib\moment.nl.js" />
+    <Content Include="V3\scripts\lib\require.js" />
+    <Content Include="V3\scripts\lib\reqwest.min.js" />
+    <Content Include="V3\scripts\lib\startswith.js" />
+    <Content Include="V3\scripts\lib\text.js" />
+    <Content Include="V3\style\custom.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="V3\scripts\app\viewmodels\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54752</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54743/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,33 @@
+﻿<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Club Programma</div>
+    <div class="panel-body" data-bind="visible: loading()">
+        <p>Bezig met laden...</p>
+    </div>
+    <table class="table" data-bind="visible: !loading()">
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Tijd</th>
+                <th>Wedstrijd</th>
+                <th>Veld</th>
+                <th>KKT</th>
+                <th>KKU</th>
+                <th>Scheidsrechter</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: programma">
+            <tr data-bind="css: { afgelast: _isAfgelast}">
+                <th scope="row" data-bind="text: _datum, attr: {title: _datumVolledig}"></th>
+                <td data-bind="text: aanvangstijd"></td>
+                <td data-bind="html: _wedstrijd"></td>
+                <td data-bind="text: veld"></td>
+                <td data-bind="text: kleedkamerthuisteam"></td>
+                <td data-bind="text: kleedkameruitteam"></td>
+                <td data-bind="text: scheidsrechter"></td>
+                <td><img data-bind="attr: {src: '/images/' + _competitieafkorting + '.png', alt: competitiesoort, title: competitiesoort}" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

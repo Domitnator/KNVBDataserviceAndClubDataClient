@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CBT Competitie gegevens V3</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="container">
+
+        <div class="starter-template">
+            <h1>CBT KNVB Dataservice V3</h1>
+            <p class="lead">Op deze pagina kunt u lezen hoe u de CBT V3 KNVBDataservice koppeling kunt configureren op uw eigen site</p>
+        </div>
+
+        <div class="row">
+            <h1>Download</h1>
+            <p>
+                <a href="knvbdataservice.extensions-1.0.10.zip" class="btn btn-lg">Download versie 1.0.10</a>
+            </p>
+        </div>
+
+        <div class="row">
+            <h1>Browser support</h1>
+            <p>Alle browsers worden ondersteund, inclusief Internet Explorer 9. Voor het werken met internet explorer 8 dient een kleine aanpassing gemaakt te worden, hierover later meer.</p>
+        </div>
+
+        <div class="row">
+            <h1>Afhankelijkheden</h1>
+            <p>De html is gebasseerd op <a href="http://getbootstrap.com/">Bootstrap</a>. Om dus direct een mooi resultaat te krijgen dien je bootstrap css toe te voegen aan je pagina.</p>
+            <p>De templates zijn gemaakt middels <a href="http://www.knockoutjs.com/">knockoutjs</a>. U bent vrij de templates naar eigen smaak in te richten.</p>
+        </div>
+
+        <div class="row">
+            <h1>(Basis) Configuratie</h1>
+            <ol>
+                <li>Download de zip (hierboven).</li>
+                <li>Plaats de knvbdataservice.extensions.js uit de zip op een locatie naar keuze.</li>
+                <li>Optioneel: Plaats de templates uit de zip op een locatie naar keuze en pas deze aan naar uw wensen.</li>
+                <li>
+                    <p>Voeg het volgende script toe vlak voor het <strong>einde van de body tag</strong> van je html </p>
+                    <pre>
+    &lt;script&gt;<br />
+    var cood = {<br />
+        config: {<br />
+        &#39;config&#39;: {<br />
+        clubname: &#39;xxxx&#39;, //Vervangen door correcte waarde<br />
+        rootUri: &#39;https://knvbdataservicehatch.azurewebsites.net&#39;,<br />
+        templatePath:  &#39;/xxx/templates &#39;, //(Optioneel) Let op: geen backslash op het einde<br />
+        knvbKey: &#39;xxxxx&#39;, //Vervangen door correcte waarde<br />
+        knvbPath: &#39;xxxxx&#39; //Vervangen door correcte waarde<br />
+        }<br />
+    }<br />
+};<br />
+&lt;/script&gt;<br />
+&lt;script data-main=&quot;build/app&quot; src=&quot;xxxx/knvbdataservice.extensions.js&quot;&gt;&lt;/script&gt;<br />
+&lt;/body&gt;<br />
+                    </pre>
+                </li>
+            </ol>
+            <p>Vervang in de config de waarden door waarden die van toepassing zijn voor de club.</p>
+        </div>
+
+        <div class="row">
+            <h1>Installatie video's</h1>
+            <div class="row">
+                <h4>Programma</h4>
+                <p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_M3PIjMrRe0" frameborder="0" allowfullscreen></iframe>
+                </p>
+            </div>
+            <div class="row">
+                <h4>Programma/Stand/Uitslagen per competitie</h4>
+                <p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IdjJwxfbGWY" frameborder="0" allowfullscreen></iframe>
+                </p>
+            </div>
+            <div class="row">
+                <h4>Templates aanpassen</h4>
+                <p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/muvWk60EmQ0" frameborder="0" allowfullscreen></iframe>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <h1>Componenten</h1>
+            <p>
+                U kunt gegevens overzichten eenvoudig toevoegen aan uw pagina. Hieronder vindt u een overzicht van componenten die momenteel beschikbaar zijn. U hoeft de component-html alleen maar toe te voegen aan uw eigen html.
+            </p>
+            <h3>Voorbeeld</h3>
+            <p><a href="cood-club-programma.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <h3>Competitie overzichten</h3>
+            <hr />
+            <h4>
+                Competitie stand:
+            </h4>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-competitie-stand&#39;,
+                params: {
+                teamid: &#39;190286&#39;,
+                district: &#39;OO&#39;,
+                compid: &#39;0214&#39;,
+                classid: &#39;16&#39;,
+                pouleid: &#39;428286&#39;,
+                programmaOptions: { filter: &#39;&amp;order=time&amp;weeknummer=&#39; + $root.currentWeekNumber },
+                sessionId: $root.sessionId}
+                }&quot;&gt;
+                &lt;/div&gt;
+
+            </code>
+            <p><a href="cood-competitie-stand.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <h4>
+                Competitie uitslagen:
+            </h4>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-competitie-uitslagen&#39;,
+                params: {
+                teamid: &#39;190294&#39;,
+                district: &#39;OO&#39;,
+                compid: &#39;0512&#39;,
+                classid: &#39;13&#39;,
+                pouleid: &#39;419820&#39;,
+                programmaOptions:
+                {
+                filter: &#39;&amp;order=time&amp;weeknummer=&#39; + $root.currentWeekNumber
+                },
+                sessionId: $root.sessionId}
+                }&quot;&gt;
+                &lt;/div&gt;
+            </code>
+            <p><a href="cood-competitie-uitslagen.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <h4>
+                Competitie programma:
+            </h4>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-competitie-programma&#39;,
+                params: {teamid: &#39;190294&#39;, district: &#39;OO&#39;, compid: &#39;0512&#39;, classid: &#39;13&#39;, pouleid: &#39;419820&#39;, programmaOptions: { filter: &#39;&amp;order=time&amp;weeknummer=&#39; + $root.currentWeekNumber }, sessionId: $root.sessionId}
+                }&quot;&gt;
+                &lt;/div&gt;
+            </code>
+            <p><a href="cood-competitie-programma.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <h4>
+                Competitie programma/uitslagen/stand:
+            </h4>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-competitie-programma-uitslagen-stand&#39;,
+                params: {
+                teamid: &#39;190286&#39;,
+                district: &#39;OO&#39;,
+                compid: &#39;0214&#39;,
+                classid: &#39;16&#39;,
+                pouleid: &#39;428286&#39;,
+                programmaOptions: { filter: &#39;&amp;order=time&amp;weeknummer=&#39; + $root.currentWeekNumber },
+                uitslagenOptions: { filter: &#39;&amp;order=time&amp;weeknummer=&#39; + $root.currentWeekNumber },
+                sessionId: $root.sessionId}
+                }&quot;&gt;
+                &lt;/div&gt;
+            </code>
+            <p><a href="cood-competitie-programma-uitslagen-stand.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <h3>Club overzichten</h3>
+            <hr />
+            <h4>
+                Club Programma:
+            </h4>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-club-programma&#39;,
+                params: {options: { reverseOrder: false, filter: &#39;&amp;weeknummer=&#39; + $root.currentWeekNumber }, sessionId: $root.sessionId}
+                }&quot;&gt;
+                &lt;/div&gt;
+            </code>
+            <p><a href="cood-club-programma.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <h4>
+                Club Uitslagen:
+            </h4>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-club-uitslagen&#39;,
+                params: { sessionId: $root.sessionId }
+                }&quot;&gt;
+                &lt;/div&gt;
+            </code>
+            <p><a href="cood-club-uitslagen.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <h4>
+                Club Programma (gegroupeerd):
+            </h4>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-club-programma-gegroepeerd&#39;,
+                params: { options: { reverseOrder: false, filter: &#39;&amp;weeknummer=&#39; + $root.currentWeekNumber }, sessionId: $root.sessionId}
+                }&quot;&gt;
+                &lt;/div&gt;
+            </code>
+            <p><a href="cood-club-programma-gegroepeerd.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <h4>
+                Club Uitslagen (gegroupeerd):
+            </h4>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-club-uitslagen-gegroepeerd&#39;,
+                params: {
+                options: {
+                reverseOrder: false,
+                filter: &#39;&amp;weeknummer=&#39; + $root.currentWeekNumber
+                },
+                sessionId: $root.sessionId}
+                }&quot;&gt;
+                &lt;/div&gt;
+            </code>
+            <p><a href="cood-club-uitslagen-gegroupeerd.html">Bekijk hier een voorbeeld implementatie</a></p>
+            <hr />
+            <p>
+                U kunt zelf bepalen welke teams er getoond worden in het overzicht. Om dit te regelen kunt u in de options de "csvTeamIds" property toevoegen en comma gescheiden de id's van de teams opgeven. Bijvoorbeeld:
+            </p>
+            <p>
+                <code>
+                    &lt;div data-bind=&quot;component: {
+                    name: &#39;cood-club-programma&#39;,
+                    params: {options: { <strong>csvTeamIds: &#39;189616,191488,254804&#39;</strong>, reverseOrder: false, filter: &#39;&amp;weeknummer=&#39; + $root.currentWeekNumber }, sessionId: $root.sessionId}
+                    }&quot;&gt;
+                    &lt;/div&gt;
+                </code>
+            </p>
+            <p>Let op: de volgorde van het opgeven van de teamid's bepaalt ook de volgorde van de weergave.</p>
+            <p><a href="cood-club-uitslagen-gefilterd.html">Bekijk hier een voorbeeld implementatie</a></p>
+        </div>
+        <div class="row">
+            <h1>Templates</h1>
+            <p>De templates worden gebruikt om de gegevens van de knvb om te zetten in html. Elk component heeft zijn eigen template, aan de naam van de template kunt u zien bij welk component deze hoort. Deze templates kunt u naar eigen wens aanpassen. Alle templates zijn te vinden in de zip-file die boven aan de pagina te vinden is.</p>
+        </div>
+        <div class="row">
+            <h1>CSS</h1>
+            <p>Omdat de componenten uiteindelijk gerendered worden in de DOM van de pagina kunt u gewoon CSS wijzigingen doen zoals u normaal ook zou doen. Er is dus géén speciale CSS die u moet inladen. Let wel: de templates zijn gemaakt op basis van boostrap. Als u dus de Bootstrap CSS toevoegd heeft u gelijk een mooi resultaat. Heeft u speciale opmaak nodig dan voor bepaalde elementen dan kunt u altijd zelf classes toevoegen aan de templates en deze vervolgens stylen zoals u wilt.</p>
+        </div>
+
+
+        <div class="row">
+            <h1>Image Pack</h1>
+            <p>De standaard templates gebruiken afbeeldingen om aan te geven of een wedstrijd voor de beker/competitie/oefen is. De gebruikte afbeeldingen kunt u hier downloaden.</p>
+            <p>
+                <a href="images.zip" class="btn btn-lg">Download afbeeldingen</a>
+            </p>
+        </div>
+
+
+        <div class="row">
+            <h1>KNVB ID's</h1>
+            <p>
+                Sommige componenten vereisen speciale KNVB id's (bijvoorbeeld: teamid, district, pouleid). Deze id's kunt u vinden via het club-teams component én het club-competities component: <br />
+                <code>
+                    &lt;div data-bind=&quot;component: {
+                    name: &#39;cood-club-teams&#39;,
+                    params: { sessionId: $root.sessionId }
+                    }&quot;&gt;
+                    &lt;/div&gt;
+                </code>
+            <p>&nbsp;</p>
+            <code>
+                &lt;div data-bind=&quot;component: {
+                name: &#39;cood-club-competities&#39;,
+                params: { sessionId: $root.sessionId}
+                }&quot;&gt;&lt;/div&gt;
+            </code>.
+            <p><a href="ids.html">Klik hier om een voorbeeld pagina te zien met beide componenten.</a></p>
+            </p>
+        </div>
+        <div class="row">
+            <h1>Filters</h1>
+            <p>Sommige componenten beschikken over een "filter" parameter. Bijvoorbeeld: </p>
+            <p>
+                <code>
+                    &lt;div data-bind=&quot;component: {
+                    name: &#39;cood-club-programma-gegroepeerd&#39;,
+                    params: { options: { filter: &#39;&amp;order=time&amp;weeknummer=&#39; + $root.currentWeekNumber }, sessionId: $root.sessionId}
+                    }&quot;&gt;
+                    &lt;/div&gt;
+                </code>
+            </p>
+            <p>Deze filter parameter wordt 1 op 1 doorgegeven, als querystring, aan de achterliggende call richting de dataservice van de knvb. Hetgeen opgegeven kan worden wordt dus bepaald door de knvb-dataservice. Op de site van de knvbdataservice kunt u per call zien wat de mogelijkheden zijn: <a href="http://api.knvbdataservice.nl/">api.knvbdataservice.nl</a></p>
+            <p>Bijvoorbeeld: Het club-programma gebruikt de volgende knvb-dataservice call: <a href="http://api.knvbdataservice.nl/hoofdstuk/wedstrijden">http://api.knvbdataservice.nl/hoofdstuk/wedstrijden.</a>. Daar is te lezen desbetreffende call een parameter "order" heeft: </p>
+            <p><i>De parameter order is optioneel. De default is leeg, hierdoor worden alle wedstrijden op sterkte van competitie teruggegeven. Als de optie time wordt meegegeven, dan zijn de wedstrijden gesorteerd op tijd.</i></p>
+            <p>Als de dus op datum willen sorteren dan geven we als filter "&amp;order=time" mee in het component (zoals hierboven te zien is).</p>
+        </div>
+        <div class="row">
+            <h1>Changelog</h1>
+            <div class="row">
+                <h3>1.0.10</h3>
+                <ul class="container">
+                    <li>club-competities template aangepast. Er is nu een kolom met een gegenereerde programma-uitslagen-stand div. Dit scheelt veel kopieren en plakken</li>
+                </ul>
+            </div>
+            <div class="row">
+                <h3>1.0.9</h3>
+                <ul>
+                    <li>Internet explorer + Firefox bug opgelost</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>&nbsp;</footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<div class="panel panel-default">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" data-bind="css: { active: activeTab() == 'stand' }, click: function(){ changeActiveTab('stand'); }"><a href="#stand" role="tab">Stand</a></li>
+        <li role="presentation" data-bind="css: { active: activeTab() == 'programma' }, click: function(){ changeActiveTab('programma'); }"><a href="#programma" role="tab">programma</a></li>
+        <li role="presentation" data-bind="css: { active: activeTab() == 'uitslagen' }, click: function(){ changeActiveTab('uitslagen'); }"><a href="#uitslagen" role="tab">uitslagen</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" data-bind="css: { active: activeTab() == 'stand' }" id="stand">
+            <div data-bind="component: {
+             name: 'cood-competitie-stand',
+             params: {
+             teamid: teamid,
+             district: district,
+             compid: compid,
+             classid: classid,
+             pouleid: pouleid,
+             options: standOptions,
+             sessionId: sessionId}
+             }">
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" data-bind="css: { active: activeTab() == 'programma' }" id="programma">
+            <div data-bind="component: {
+             name: 'cood-competitie-programma',
+             params: {
+             teamid: teamid,
+             district: district,
+             compid: compid,
+             classid: classid,
+             pouleid: pouleid,
+             options: programmaOptions,
+             sessionId: sessionId}
+             }">
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" data-bind="css: { active: activeTab() == 'uitslagen' }" id="uitslagen">
+            <div data-bind="component: {
+             name: 'cood-competitie-uitslagen',
+             params: {
+             teamid: teamid,
+             district: district,
+             compid: compid,
+             classid: classid,
+             pouleid: pouleid,
+             options: uitslagenOptions,
+             sessionId: sessionId}
+             }">
+            </div>
+        </div>
+    </div>
+</div>

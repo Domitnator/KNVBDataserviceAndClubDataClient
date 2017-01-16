@@ -1,0 +1,31 @@
+﻿<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Club Teams</div>
+    <div class="panel-body" data-bind="visible: loading()">
+        <p>Bezig met laden...</p>
+    </div>
+    <table class="table" data-bind="visible: !loading()">
+        <thead>
+            <tr>
+                <th>teamid</th>
+                <th>teamname</th>
+                <th>speeldag</th>
+                <th>categorie</th>
+                <th>regulierecompetitie</th>
+                <th>bekercompetitie</th>
+                <th>nacompetitie</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: teams">
+            <tr>
+                <th scope="row" data-bind="text: teamid"></th>
+                <td data-bind="text: teamname"></td>
+                <td data-bind="html: speeldag"></td>
+                <td data-bind="text: categorie"></td>
+                <td data-bind="text: regulierecompetitie"></td>
+                <td data-bind="text: bekercompetitie"></td>
+                <td data-bind="text: nacompetitie"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

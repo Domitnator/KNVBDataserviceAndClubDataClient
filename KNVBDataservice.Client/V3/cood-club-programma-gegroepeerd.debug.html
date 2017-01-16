@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>cood-club-programma-gegroepeerd</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link href="style/custom.css" rel="stylesheet" />
+    <script>
+        var require = {
+            config: {
+                'config': {
+                    clubname: 'FC Eibergen',
+                    rootUri: 'https://knvbdataservicehatch.azurewebsites.net',
+                    knvbKey: 'pe5vFJfJsPeUYTk',
+                    knvbPath: 'fceibergen'
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="knvb-content">
+        <div data-bind="component: {
+             name: 'cood-club-programma-gegroepeerd',
+             params: {options: { reverseOrder: false, filter: '&weeknummer=' + $root.currentWeekNumber }, sessionId: $root.sessionId}
+             }">
+        </div>
+    </div>
+    <script data-main="scripts/app" src="scripts/lib/require.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Clubprogramma</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link href="style/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="knvb-content">
+        <h1>Club teams</h1>
+        <div data-bind="component: {
+             name: 'cood-club-teams',
+             params: { sessionId: $root.sessionId }
+             }">
+        </div>
+        <h2>Club competities</h2>
+        <div data-bind="component: {
+             name: 'cood-club-competities',
+             params: { sessionId: $root.sessionId}
+             }">
+        </div>
+    </div>
+    <script>
+        var cood = {
+            config: {
+                'config': {
+                    clubname: 'FC Eibergen',
+                    rootUri: 'https://knvbdataservicehatch.azurewebsites.net',
+                    templatePath: '/V3/build/app/templates',
+                    knvbKey: 'pe5vFJfJsPeUYTk',
+                    knvbPath: 'fceibergen'
+                }
+            }
+        };
+    </script>
+    <script data-main="build/app" src="build/knvbdataservice.extensions-1.0.10.js"></script>
+</body>
+</html>

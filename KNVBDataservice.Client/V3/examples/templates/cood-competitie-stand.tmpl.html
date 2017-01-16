@@ -1,0 +1,30 @@
+﻿<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Competitie Stand</div>
+    <div class="panel-body" data-bind="visible: loading()">
+        <p>Bezig met laden...</p>
+    </div>
+    <table class="table" data-bind="visible: !loading()">
+        <thead>
+            <tr>
+                <th colspan="4">I am external</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th>Positie</th>
+                <th>Naam</th>
+                <th>Punten</th>
+                <th>Gespeeld</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: rankings">
+            <tr>
+                <th scope="row" data-bind="text: Positie"></th>
+                <td data-bind="html: naam"></td>
+                <td data-bind="text: Punten"></td>
+                <td data-bind="text: Gespeeld"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

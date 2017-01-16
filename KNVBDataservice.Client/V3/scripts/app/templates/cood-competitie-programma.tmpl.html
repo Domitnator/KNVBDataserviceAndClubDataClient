@@ -1,0 +1,33 @@
+﻿<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Competitie Programma</div>
+    <div class="panel-body" data-bind="visible: loading()">
+        <p>Bezig met laden...</p>
+    </div>
+    <table class="table" data-bind="visible: !loading()">
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Tijd</th>
+                <th>Wedstrijd</th>
+                <th>Veld</th>
+                <th>KKT</th>
+                <th>KKU</th>
+                <th>Scheidsrechter</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: programma">
+            <tr data-bind="css: { afgelast: IsAfgelast}">
+                <th scope="row" data-bind="text: Datum, attr: {title: DatumVolledig}"></th>
+                <td data-bind="text: Tijd"></td>
+                <td data-bind="html: Wedstrijd"></td>
+                <td data-bind="text: VeldClub"></td>
+                <td data-bind="text: Kleedkamer_thuis"></td>
+                <td data-bind="text: Kleedkamer_uit"></td>
+                <td data-bind="text: Scheidsrechter"></td>
+                <td>&nbsp</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

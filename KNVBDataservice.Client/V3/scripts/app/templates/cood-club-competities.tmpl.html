@@ -1,0 +1,57 @@
+﻿<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Club Competities</div>
+    <div class="panel-body" data-bind="visible: loading()">
+        <p>Bezig met laden...</p>
+    </div>
+    <table class="table" data-bind="visible: !loading()">
+        <thead>
+            <tr>
+                <th>CompName</th>
+                <th>PUS-Div</th>
+                <th>ClassName</th>
+                <th>PouleName</th>
+                <th>District</th>
+                <th>CompId</th>
+                <th>ClassId</th>
+                <th>PouleId</th>
+                <th>CompType</th>
+                <th>TeamId</th>
+                <th>TeamAanduiding</th>
+                <th>TeamReportNaam</th>
+                <th>metStand</th>
+                <th>Perioden</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: competities">
+            <tr>
+                <th scope="row" data-bind="text: CompName"></th>
+                <td> &lt;div data-bind=&quot;component: {
+             name: &#39;cood-competitie-programma-uitslagen-stand&#39;,
+             params: {
+             teamid: &#39;<!--ko text: TeamId--><!--/ko-->&#39;,
+             district: &#39;<!--ko text: District--><!--/ko-->&#39;,
+             compid: &#39;<!--ko text: CompId--><!--/ko-->&#39;,
+             classid: &#39;<!--ko text: ClassId--><!--/ko-->&#39;,
+             pouleid: &#39;<!--ko text: PouleId--><!--/ko-->&#39;,
+             programmaOptions: { filter: &#39;&amp;order=time&amp;weeknummer=&#39; + $root.currentWeekNumber },
+             uitslagenOptions: { filter: &#39;&amp;order=time&amp;weeknummer=&#39; + $root.currentWeekNumber },
+             sessionId: $root.sessionId}
+             }&quot;&gt;
+        &lt;/div&gt;</td>
+                <td data-bind="text: ClassName"></td>
+                <td data-bind="html: PouleName"></td>
+                <td data-bind="text: District"></td>
+                <td data-bind="text: CompId"></td>
+                <td data-bind="text: ClassId"></td>
+                <td data-bind="text: PouleId"></td>
+                <td data-bind="text: CompType"></td>
+                <td data-bind="text: TeamId"></td>
+                <td data-bind="text: TeamAanduiding"></td>
+                <td data-bind="text: TeamReportNaam"></td>
+                <td data-bind="text: metStand"></td>
+                <td data-bind="text: Perioden"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
